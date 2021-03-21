@@ -1,0 +1,13 @@
+<input type="file" (change)="uploadListener($event)" accept=".csv" />
+<table class="minimalistBlack" *ngIf="headersRow.length > 0">    
+  <thead>    
+    <tr>    
+      <th *ngFor="let header of headersRow">{{header}}</th>  
+    </tr>    
+  </thead>    
+  <tbody>    
+    <tr *ngFor="let record of records">    
+      <td *ngFor="let column of headersRow"> <span>{{record[column]}}</span> </td>    
+    </tr>    
+  </tbody>    
+</table>
